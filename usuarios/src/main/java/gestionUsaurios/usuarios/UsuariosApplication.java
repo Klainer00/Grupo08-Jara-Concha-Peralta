@@ -1,13 +1,13 @@
-package usuarios.gestion;
+package gestionUsaurios.usuarios;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class GestionApplication {
+public class UsuariosApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(GestionApplication.class, args);
+		SpringApplication.run(UsuariosApplication.class, args);
 	}
 
 }

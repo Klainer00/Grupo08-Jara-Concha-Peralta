@@ -1,10 +1,10 @@
-package usuarios.gestion;
+package gestionUsaurios.usuarios;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class GestionApplicationTests {
+class UsuariosApplicationTests {
 
 	@Test
 	void contextLoads() {
