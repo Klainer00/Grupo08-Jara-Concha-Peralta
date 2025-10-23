@@ -1,0 +1,50 @@
+2025-10-23T03:41:00.120-03:00  INFO 12992 --- [usuarios] [main] g.usuarios.UsuariosApplication           : Starting UsuariosApplication using Java 17.0.4.1 with PID 12992 (C:\Users\brian\Desktop\Grupo08-Jara-Concha-Peralta\usuarios\target\classes started by brian in C:\Users\brian\Desktop\Grupo08-Jara-Concha-Peralta\usuarios)
+2025-10-23T03:41:00.122-03:00  INFO 12992 --- [usuarios] [main] g.usuarios.UsuariosApplication           : No active profile set, falling back to 1 default profile: "default"
+2025-10-23T03:41:00.160-03:00  INFO 12992 --- [usuarios] [main] .s.b.d.c.l.DockerComposeLifecycleManager : Using Docker Compose file C:\Users\brian\Desktop\Grupo08-Jara-Concha-Peralta\usuarios\compose.yaml
+2025-10-23T03:41:00.271-03:00 ERROR 12992 --- [usuarios] [main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.boot.docker.compose.core.DockerProcessStartException: Unable to start docker process. Is docker correctly installed?
+	at org.springframework.boot.docker.compose.core.DockerCli$DockerCommands.getDockerCommand(DockerCli.java:151) ~[spring-boot-docker-compose-3.4.10.jar:3.4.10]
+	at org.springframework.boot.docker.compose.core.DockerCli$DockerCommands.<init>(DockerCli.java:140) ~[spring-boot-docker-compose-3.4.10.jar:3.4.10]
+	at org.springframework.boot.docker.compose.core.DockerCli.lambda$new$0(DockerCli.java:66) ~[spring-boot-docker-compose-3.4.10.jar:3.4.10]
+	at java.base/java.util.HashMap.computeIfAbsent(HashMap.java:1220) ~[na:na]
+	at org.springframework.boot.docker.compose.core.DockerCli.<init>(DockerCli.java:65) ~[spring-boot-docker-compose-3.4.10.jar:3.4.10]
+	at org.springframework.boot.docker.compose.core.DockerCompose.get(DockerCompose.java:145) ~[spring-boot-docker-compose-3.4.10.jar:3.4.10]
+	at org.springframework.boot.docker.compose.lifecycle.DockerComposeLifecycleManager.getDockerCompose(DockerComposeLifecycleManager.java:166) ~[spring-boot-docker-compose-3.4.10.jar:3.4.10]
+	at org.springframework.boot.docker.compose.lifecycle.DockerComposeLifecycleManager.start(DockerComposeLifecycleManager.java:114) ~[spring-boot-docker-compose-3.4.10.jar:3.4.10]
+	at org.springframework.boot.docker.compose.lifecycle.DockerComposeListener.onApplicationEvent(DockerComposeListener.java:53) ~[spring-boot-docker-compose-3.4.10.jar:3.4.10]
+	at org.springframework.boot.docker.compose.lifecycle.DockerComposeListener.onApplicationEvent(DockerComposeListener.java:35) ~[spring-boot-docker-compose-3.4.10.jar:3.4.10]
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:185) ~[spring-context-6.2.11.jar:6.2.11]
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:178) ~[spring-context-6.2.11.jar:6.2.11]
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:156) ~[spring-context-6.2.11.jar:6.2.11]
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:138) ~[spring-context-6.2.11.jar:6.2.11]
+	at org.springframework.boot.context.event.EventPublishingRunListener.multicastInitialEvent(EventPublishingRunListener.java:136) ~[spring-boot-3.4.10.jar:3.4.10]
+	at org.springframework.boot.context.event.EventPublishingRunListener.contextLoaded(EventPublishingRunListener.java:98) ~[spring-boot-3.4.10.jar:3.4.10]
+	at org.springframework.boot.SpringApplicationRunListeners.lambda$contextLoaded$4(SpringApplicationRunListeners.java:72) ~[spring-boot-3.4.10.jar:3.4.10]
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75) ~[na:na]
+	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:118) ~[spring-boot-3.4.10.jar:3.4.10]
+	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:112) ~[spring-boot-3.4.10.jar:3.4.10]
+	at org.springframework.boot.SpringApplicationRunListeners.contextLoaded(SpringApplicationRunListeners.java:72) ~[spring-boot-3.4.10.jar:3.4.10]
+	at org.springframework.boot.SpringApplication.prepareContext(SpringApplication.java:416) ~[spring-boot-3.4.10.jar:3.4.10]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:317) ~[spring-boot-3.4.10.jar:3.4.10]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361) ~[spring-boot-3.4.10.jar:3.4.10]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350) ~[spring-boot-3.4.10.jar:3.4.10]
+	at gestionUsaurios.usuarios.UsuariosApplication.main(UsuariosApplication.java:10) ~[classes/:na]
+Caused by: org.springframework.boot.docker.compose.core.ProcessStartException: Unable to start command docker version --format {{.Client.Version}}
+	at org.springframework.boot.docker.compose.core.ProcessRunner.startProcess(ProcessRunner.java:116) ~[spring-boot-docker-compose-3.4.10.jar:3.4.10]
+	at org.springframework.boot.docker.compose.core.ProcessRunner.run(ProcessRunner.java:88) ~[spring-boot-docker-compose-3.4.10.jar:3.4.10]
+	at org.springframework.boot.docker.compose.core.ProcessRunner.run(ProcessRunner.java:75) ~[spring-boot-docker-compose-3.4.10.jar:3.4.10]
+	at org.springframework.boot.docker.compose.core.DockerCli$DockerCommands.getDockerCommand(DockerCli.java:146) ~[spring-boot-docker-compose-3.4.10.jar:3.4.10]
+	... 25 common frames omitted
+Caused by: java.io.IOException: Cannot run program "docker": CreateProcess error=2, The system cannot find the file specified
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1143) ~[na:na]
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1073) ~[na:na]
+	at org.springframework.boot.docker.compose.core.ProcessRunner.startProcess(ProcessRunner.java:106) ~[spring-boot-docker-compose-3.4.10.jar:3.4.10]
+	... 28 common frames omitted
+Caused by: java.io.IOException: CreateProcess error=2, The system cannot find the file specified
+	at java.base/java.lang.ProcessImpl.create(Native Method) ~[na:na]
+	at java.base/java.lang.ProcessImpl.<init>(ProcessImpl.java:499) ~[na:na]
+	at java.base/java.lang.ProcessImpl.start(ProcessImpl.java:158) ~[na:na]
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1110) ~[na:na]
+	... 30 common frames omitted
+
