@@ -1,0 +1,8 @@
+huerto\core\entity\ProductoEntity.class
+huerto\core\dto\ProductoDTO.class
+huerto\core\dto\CategoriaDTO.class
+huerto\core\service\ProductoService.class
+huerto\core\controller\ProductoController.class
+huerto\core\repository\ProductoRepository.class
+huerto\core\repository\CategoriaRepository.class
+huerto\core\entity\CategoriaEntity.class
