@@ -1,4 +1,4 @@
-package main.java.huerto.controller;
+package huerto.controller;
 
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;

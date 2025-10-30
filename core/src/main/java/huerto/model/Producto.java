@@ -1,4 +1,4 @@
-package main.java.huerto.model;
+package huerto.model;
 
 import jakarta.persistence.*;
 import lombok.Data;
@@ -23,7 +23,6 @@ public class Producto {
     @Column(nullable = false)
     private Integer stock;
 
-    // Muchos Productos pertenecen a una Categoría
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "categoria_id", nullable = false)
     private CategoriaEntity categoria;

@@ -1,4 +1,4 @@
-package main.java.huerto.model;
+package huerto.model;
 
 import jakarta.persistence.*;
 import lombok.Data;
@@ -17,5 +17,5 @@ public class CategoriaEntity {
     private String nombre;
 
     @OneToMany(mappedBy = "categoria", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private Set<ProductoEntity> productos;
+    private Set<Producto> productos;
 }
