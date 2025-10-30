@@ -10,5 +10,4 @@ public class ItemCarritoDTO {
     private int cantidad;
 }
 
-// Podríamos tener DTOs más específicos si fuese necesario,
-// por ej: ActualizarCantidadDTO { int cantidad; }
+

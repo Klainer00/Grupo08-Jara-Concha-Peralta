@@ -1,12 +1,14 @@
 package huerto.carrito.service;
 
-import huerto.carrito.modelo.ItemCarrito;
+import huerto.carrito.entity.ItemCarritoEntity; 
+import huerto.carrito.dto.ItemCarritoDTO; 
 import huerto.carrito.repository.CarritoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 public class CarritoService {
@@ -14,76 +16,62 @@ public class CarritoService {
     @Autowired
     private CarritoRepository carritoRepository;
 
-    /**
-     * Obtiene todos los items del carrito para un usuario.
-     * No requiere validación de existencia, si no hay items, devuelve lista vacía.
-     */
-    public List<ItemCarrito> verCarrito(Long usuarioId) {
-        return carritoRepository.findByUsuarioId(usuarioId);
+    public List<ItemCarritoDTO> verCarrito(Long usuarioId) {
+        return carritoRepository.findByUsuarioId(usuarioId).stream()
+                .map(this::toDTO)
+                .collect(Collectors.toList());
     }
 
-    /**
-     * Agrega un item al carrito.
-     * VALIDACIÓN: Similar a 'crearUsuario', comprueba si el item ya existe.
-     * Si ya existe, actualiza la cantidad en lugar de crear un duplicado.
-     */
-    public ItemCarrito agregarItem(ItemCarrito nuevoItem) {
-        if (nuevoItem.getUsuarioId() == null || nuevoItem.getProductoId() == null) {
+    public ItemCarritoDTO agregarItem(ItemCarritoDTO itemDTO) {
+        if (itemDTO.getUsuarioId() == null || itemDTO.getProductoId() == null) {
             throw new RuntimeException("ID de usuario y ID de producto no pueden ser nulos");
         }
 
-        // 1. Validar si el item ya existe (similar al findByCorreo en UsuarioService)
-        Optional<ItemCarrito> itemExistenteOpt = carritoRepository.findByUsuarioIdAndProductoId(
-                nuevoItem.getUsuarioId(),
-                nuevoItem.getProductoId()
+        Optional<ItemCarritoEntity> itemExistenteOpt = carritoRepository.findByUsuarioIdAndProductoId(
+                itemDTO.getUsuarioId(),
+                itemDTO.getProductoId()
         );
 
         if (itemExistenteOpt.isPresent()) {
-            // Si existe, actualizamos la cantidad del item existente
-            ItemCarrito itemExistente = itemExistenteOpt.get();
-            itemExistente.setCantidad(itemExistente.getCantidad() + nuevoItem.getCantidad());
-            return carritoRepository.save(itemExistente);
+            ItemCarritoEntity itemExistente = itemExistenteOpt.get();
+            itemExistente.setCantidad(itemExistente.getCantidad() + itemDTO.getCantidad());
+            ItemCarritoEntity guardado = carritoRepository.save(itemExistente);
+            return toDTO(guardado);
         } else {
-            // Si no existe, lo creamos
-            // Aseguramos que la cantidad sea al menos 1
-            if (nuevoItem.getCantidad() <= 0) {
-                nuevoItem.setCantidad(1);
+            if (itemDTO.getCantidad() <= 0) {
+                itemDTO.setCantidad(1);
             }
-            return carritoRepository.save(nuevoItem);
+            ItemCarritoEntity entity = toEntity(itemDTO);
+            ItemCarritoEntity guardado = carritoRepository.save(entity);
+            return toDTO(guardado);
         }
     }
-
-    /**
-     * Actualiza la cantidad de un item específico.
-     * VALIDACIÓN: Similar a 'actualizarUsuario', comprueba que el item exista.
-     */
-    public Optional<ItemCarrito> actualizarCantidadItem(Long itemId, int nuevaCantidad) {
-        // 1. Validar si existe (similar a actualizarUsuario)
-        Optional<ItemCarrito> itemOpt = carritoRepository.findById(itemId);
-
-        if (itemOpt.isEmpty()) {
-            return Optional.empty(); // No se encontró el item
-        }
-
-        ItemCarrito item = itemOpt.get();
-
-        // Regla de negocio: si la cantidad es 0 o menos, eliminamos el item
-        if (nuevaCantidad <= 0) {
-            carritoRepository.delete(item);
-            return Optional.empty(); // Se borró, así que ya no existe
-        } else {
-            // Actualizamos la cantidad y guardamos
-            item.setCantidad(nuevaCantidad);
-            return Optional.of(carritoRepository.save(item));
-        }
-    }
-
-
+    
     public boolean eliminarItem(Long itemId) {
         if (carritoRepository.existsById(itemId)) {
             carritoRepository.deleteById(itemId);
             return true;
         }
-        return false; // No se encontró el item
+        return false; 
+    }
+
+    // --- Conversiones ---
+
+    private ItemCarritoDTO toDTO(ItemCarritoEntity entity) {
+        ItemCarritoDTO dto = new ItemCarritoDTO();
+        dto.setId(entity.getId());
+        dto.setProductoId(entity.getProductoId());
+        dto.setUsuarioId(entity.getUsuarioId());
+        dto.setCantidad(entity.getCantidad());
+        return dto;
+    }
+
+    private ItemCarritoEntity toEntity(ItemCarritoDTO dto) {
+        ItemCarritoEntity entity = new ItemCarritoEntity();
+        // 'id' se ignora para creación
+        entity.setProductoId(dto.getProductoId());
+        entity.setUsuarioId(dto.getUsuarioId());
+        entity.setCantidad(dto.getCantidad());
+        return entity;
     }
 }

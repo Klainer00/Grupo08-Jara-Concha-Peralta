@@ -1,6 +1,6 @@
 package huerto.carrito.controller;
 
-import huerto.carrito.modelo.ItemCarrito;
+import huerto.carrito.dto.ItemCarritoDTO;
 import huerto.carrito.service.CarritoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -16,23 +16,27 @@ public class CarritoController {
     @Autowired
     private CarritoService carritoService;
 
-    // Ver el carrito de un usuario
+
+    // Ej: @PreAuthorize("#usuarioId == authentication.principal.id or hasRole('ADMIN')")
     @GetMapping("/{usuarioId}")
-    public List<ItemCarrito> obtenerCarrito(@PathVariable Long usuarioId) {
+    public List<ItemCarritoDTO> obtenerCarrito(@PathVariable Long usuarioId) {
         return carritoService.verCarrito(usuarioId);
     }
 
-    // Agregar un item al carrito
+    // Ej: @PreAuthorize("#item.usuarioId == authentication.principal.id")
     @PostMapping
-    public ResponseEntity<ItemCarrito> agregarItem(@RequestBody ItemCarrito item) {
-        ItemCarrito nuevoItem = carritoService.agregarItem(item);
+    public ResponseEntity<ItemCarritoDTO> agregarItem(@RequestBody ItemCarritoDTO item) {
+        ItemCarritoDTO nuevoItem = carritoService.agregarItem(item);
         return ResponseEntity.status(HttpStatus.CREATED).body(nuevoItem);
     }
-
-    // Eliminar un item del carrito
+    
+    // Ej: @PreAuthorize("...lógica para verificar que el itemId pertenece al usuario autenticado...")
     @DeleteMapping("/{itemId}")
     public ResponseEntity<Void> eliminarItem(@PathVariable Long itemId) {
-        carritoService.eliminarItem(itemId);
-        return ResponseEntity.noContent().build();
+        if (carritoService.eliminarItem(itemId)) {
+            return ResponseEntity.noContent().build();
+        } else {
+            return ResponseEntity.notFound().build();
+        }
     }
 }
