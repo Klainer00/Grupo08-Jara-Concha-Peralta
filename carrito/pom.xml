@@ -5,14 +5,14 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>3.4.11</version>
+		<version>3.5.7</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>huerto</groupId>
-	<artifactId>carrito</artifactId>
+	<groupId>com.huertohogar</groupId>
+	<artifactId>carrito-microservicio</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>carrito</name>
-	<description>carrito huerto hogar</description>
+	<name>carrito-microservice</name>
+	<description>MICROSERVICIO LOGICA DEL CARRITO</description>
 	<url/>
 	<licenses>
 		<license/>
@@ -27,9 +27,7 @@
 		<url/>
 	</scm>
 	<properties>
-		<java.version>21</java.version>
-		<spring-cloud.version>2024.0.2</spring-cloud.version>
-		<tanzu-scg-extensions.version>1.0.0</tanzu-scg-extensions.version>
+		<java.version>17</java.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -40,18 +38,10 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
-		<dependency>
-			<groupId>com.vmware.tanzu.springcloudgateway.extensions</groupId>
-			<artifactId>access-control</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-gateway</artifactId>
-		</dependency>
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-docker-compose</artifactId>
+			<artifactId>spring-boot-devtools</artifactId>
 			<scope>runtime</scope>
 			<optional>true</optional>
 		</dependency>
@@ -70,25 +60,8 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<!-- Removed dependency with groupId 'com.vmware.tanzu.springcloudgateway.extensions' and artifactId 'access-control' that had no version -->
 	</dependencies>
-	<dependencyManagement>
-		<dependencies>
-			<dependency>
-				<groupId>org.springframework.cloud</groupId>
-				<artifactId>spring-cloud-dependencies</artifactId>
-				<version>${spring-cloud.version}</version>
-				<type>pom</type>
-				<scope>import</scope>
-			</dependency>
-			<dependency>
-				<groupId>com.vmware.tanzu.springcloudgateway.extensions</groupId>
-				<artifactId>extensions-bom</artifactId>
-				<version>${tanzu-scg-extensions.version}</version>
-				<type>pom</type>
-				<scope>import</scope>
-			</dependency>
-		</dependencies>
-	</dependencyManagement>
 
 	<build>
 		<plugins>
@@ -96,7 +69,6 @@
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<configuration>
-					<release>${java.version}</release>
 					<annotationProcessorPaths>
 						<path>
 							<groupId>org.projectlombok</groupId>
