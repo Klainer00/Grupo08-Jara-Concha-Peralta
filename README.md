@@ -1,5 +1,3 @@
-Claro, aquí tienes la documentación para el README.md del repositorio del Grupo 08, siguiendo el formato del ejemplo proporcionado.
-
 Huerto Hogar – Microservicios
 Este proyecto está hecho en el entorno Spring Tools Suite en Spring Boot. Cada servicio tiene sus correspondientes endpoints, y acá se detalla la forma de probar cada microservicio.
 
