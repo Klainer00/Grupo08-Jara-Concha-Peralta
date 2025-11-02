@@ -18,7 +18,7 @@ import java.util.List;
 @AllArgsConstructor
 @Entity
 @Table(name = "usuarios")
-public class Usuario implements UserDetails { // Implementar UserDetails
+public class Usuario implements UserDetails { 
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -36,14 +36,15 @@ public class Usuario implements UserDetails { // Implementar UserDetails
 
     private String telefono;
 
-    @Enumerated(EnumType.STRING) 
-    private Rol role;
 
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "rol_id", nullable = false)
+    private RolEntity role;
 
     
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return List.of(new SimpleGrantedAuthority(role.name()));
+        return List.of(new SimpleGrantedAuthority(role.getNombre()));
     }
 
     @Override
