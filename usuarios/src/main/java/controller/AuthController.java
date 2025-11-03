@@ -8,8 +8,12 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import service.UsuarioService;
 
+import com.qingzhuge.framework.security.dto.RegisterRequestDTO;
+
+import dto.RegisterRequestDto;
+import dto.UsuarioResponseDto;
+import service.UsuarioService;
 @RestController
 @RequestMapping("/api/auth")
 @RequiredArgsConstructor
@@ -18,11 +22,25 @@ public class AuthController {
     private final UsuarioService usuarioService;
 
     @PostMapping("/register")
-    public ResponseEntity<Usuario> register(@RequestBody Usuario usuario) {
+    // 1. Usar DTOs para request y response
+    public ResponseEntity<dto.UsuarioResponseDto> register(@RequestBody RegisterRequestDto requestDto) {
         try {
-            Usuario nuevoUsuario = usuarioService.crearUsuario(usuario); 
-            return ResponseEntity.status(HttpStatus.CREATED).body(nuevoUsuario);
+            // 2. El servicio ahora recibe el DTO
+            Usuario nuevoUsuario = usuarioService.crearUsuario(requestDto); 
+            
+            // 3. Convertir la entidad a DTO de respuesta (sin contraseña)
+            dto.UsuarioResponseDto responseDto = dto.UsuarioResponseDto.builder()
+                .id(nuevoUsuario.getId())
+                .nombre(nuevoUsuario.getNombre())
+                .correo(nuevoUsuario.getCorreo())
+                .direccion(nuevoUsuario.getDireccion())
+                .telefono(nuevoUsuario.getTelefono())
+                .rol(nuevoUsuario.getRole().getNombre())
+                .build();
+            
+            return ResponseEntity.status(HttpStatus.CREATED).body(responseDto);
         } catch (RuntimeException e) {
+            // Puedes manejar mejor la excepción si "El correo ya está en uso"
             return ResponseEntity.status(HttpStatus.CONFLICT).body(null);
         }
     }

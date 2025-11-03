@@ -1,0 +1,646 @@
+2025-11-02T20:08:43.410-03:00  INFO 16472 --- [carrito] [main] huerto.carrito.CarritoApplication        : Starting CarritoApplication using Java 17.0.12 with PID 16472 (C:\Users\twitc\Documents\GitHub\Grupo08-Jara-Concha-Peralta\carrito\target\classes started by twitc in C:\Users\twitc\Documents\GitHub\Grupo08-Jara-Concha-Peralta\carrito)
+2025-11-02T20:08:43.413-03:00  INFO 16472 --- [carrito] [main] huerto.carrito.CarritoApplication        : No active profile set, falling back to 1 default profile: "default"
+2025-11-02T20:08:44.081-03:00  INFO 16472 --- [carrito] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-11-02T20:08:44.098-03:00  INFO 16472 --- [carrito] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 5 ms. Found 0 JPA repository interfaces.
+2025-11-02T20:08:44.916-03:00  INFO 16472 --- [carrito] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8180 (http)
+2025-11-02T20:08:44.935-03:00  INFO 16472 --- [carrito] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-11-02T20:08:44.936-03:00  INFO 16472 --- [carrito] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.48]
+2025-11-02T20:08:45.006-03:00  INFO 16472 --- [carrito] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-11-02T20:08:45.007-03:00  INFO 16472 --- [carrito] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1523 ms
+2025-11-02T20:08:45.193-03:00  INFO 16472 --- [carrito] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-11-02T20:08:45.246-03:00  INFO 16472 --- [carrito] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.33.Final
+2025-11-02T20:08:45.282-03:00  INFO 16472 --- [carrito] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-11-02T20:08:45.551-03:00  INFO 16472 --- [carrito] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-11-02T20:08:45.585-03:00  INFO 16472 --- [carrito] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-11-02T20:08:45.906-03:00  INFO 16472 --- [carrito] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2b936b04
+2025-11-02T20:08:45.908-03:00  INFO 16472 --- [carrito] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-11-02T20:08:45.974-03:00  WARN 16472 --- [carrito] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-11-02T20:08:45.975-03:00  WARN 16472 --- [carrito] [main] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-11-02T20:08:45.996-03:00  INFO 16472 --- [carrito] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-11-02T20:08:46.339-03:00  INFO 16472 --- [carrito] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-11-02T20:08:46.344-03:00  INFO 16472 --- [carrito] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-11-02T20:08:46.424-03:00  WARN 16472 --- [carrito] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-11-02T20:08:46.801-03:00  INFO 16472 --- [carrito] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2025-11-02T20:08:47.006-03:00  INFO 16472 --- [carrito] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8180 (http) with context path '/'
+2025-11-02T20:08:47.018-03:00  INFO 16472 --- [carrito] [main] huerto.carrito.CarritoApplication        : Started CarritoApplication in 4.248 seconds (process running for 4.64)
+2025-11-02T20:15:29.174-03:00  INFO 16472 --- [carrito] [http-nio-8180-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-11-02T20:15:29.175-03:00  INFO 16472 --- [carrito] [http-nio-8180-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-11-02T20:15:29.176-03:00  INFO 16472 --- [carrito] [http-nio-8180-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-11-02T20:19:34.530-03:00  INFO 16472 --- [carrito] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-11-02T20:19:34.726-03:00  INFO 16472 --- [carrito] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-11-02T20:19:34.732-03:00  INFO 16472 --- [carrito] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-11-02T20:19:34.734-03:00  INFO 16472 --- [carrito] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-11-02T20:19:34.746-03:00  INFO 16472 --- [carrito] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-11-02T20:20:01.336-03:00  INFO 15152 --- [carrito] [main] huerto.carrito.CarritoApplication        : Starting CarritoApplication using Java 17.0.12 with PID 15152 (C:\Users\twitc\Documents\GitHub\Grupo08-Jara-Concha-Peralta\carrito\target\classes started by twitc in C:\Users\twitc\Documents\GitHub\Grupo08-Jara-Concha-Peralta\carrito)
+2025-11-02T20:20:01.338-03:00  INFO 15152 --- [carrito] [main] huerto.carrito.CarritoApplication        : No active profile set, falling back to 1 default profile: "default"
+2025-11-02T20:20:01.654-03:00  INFO 15152 --- [carrito] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-11-02T20:20:01.664-03:00  INFO 15152 --- [carrito] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 2 ms. Found 0 JPA repository interfaces.
+2025-11-02T20:20:02.111-03:00  INFO 15152 --- [carrito] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8180 (http)
+2025-11-02T20:20:02.122-03:00  INFO 15152 --- [carrito] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-11-02T20:20:02.123-03:00  INFO 15152 --- [carrito] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.48]
+2025-11-02T20:20:02.164-03:00  INFO 15152 --- [carrito] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-11-02T20:20:02.165-03:00  INFO 15152 --- [carrito] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 788 ms
+2025-11-02T20:20:02.271-03:00  INFO 15152 --- [carrito] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-11-02T20:20:02.304-03:00  INFO 15152 --- [carrito] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.33.Final
+2025-11-02T20:20:02.327-03:00  INFO 15152 --- [carrito] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-11-02T20:20:02.494-03:00  INFO 15152 --- [carrito] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-11-02T20:20:02.515-03:00  INFO 15152 --- [carrito] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-11-02T20:20:02.708-03:00  INFO 15152 --- [carrito] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@41582899
+2025-11-02T20:20:02.710-03:00  INFO 15152 --- [carrito] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-11-02T20:20:02.738-03:00  WARN 15152 --- [carrito] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-11-02T20:20:02.741-03:00  WARN 15152 --- [carrito] [main] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-11-02T20:20:02.757-03:00  INFO 15152 --- [carrito] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-11-02T20:20:02.954-03:00  INFO 15152 --- [carrito] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-11-02T20:20:02.960-03:00  INFO 15152 --- [carrito] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-11-02T20:20:03.024-03:00  WARN 15152 --- [carrito] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-11-02T20:20:03.246-03:00  INFO 15152 --- [carrito] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2025-11-02T20:20:03.358-03:00  INFO 15152 --- [carrito] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8180 (http) with context path '/'
+2025-11-02T20:20:03.363-03:00  INFO 15152 --- [carrito] [main] huerto.carrito.CarritoApplication        : Started CarritoApplication in 2.328 seconds (process running for 2.53)
+2025-11-02T20:20:09.284-03:00  INFO 15152 --- [carrito] [http-nio-8180-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-11-02T20:20:09.285-03:00  INFO 15152 --- [carrito] [http-nio-8180-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-11-02T20:20:09.286-03:00  INFO 15152 --- [carrito] [http-nio-8180-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2025-11-02T20:20:56.867-03:00  INFO 15152 --- [carrito] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-11-02T20:20:57.026-03:00  INFO 15152 --- [carrito] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-11-02T20:20:57.030-03:00  INFO 15152 --- [carrito] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-11-02T20:20:57.032-03:00  INFO 15152 --- [carrito] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-11-02T20:20:57.041-03:00  INFO 15152 --- [carrito] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-11-02T20:21:16.184-03:00  INFO 19320 --- [carrito] [main] huerto.carrito.CarritoApplication        : Starting CarritoApplication using Java 17.0.12 with PID 19320 (C:\Users\twitc\Documents\GitHub\Grupo08-Jara-Concha-Peralta\carrito\target\classes started by twitc in C:\Users\twitc\Documents\GitHub\Grupo08-Jara-Concha-Peralta\carrito)
+2025-11-02T20:21:16.186-03:00  INFO 19320 --- [carrito] [main] huerto.carrito.CarritoApplication        : No active profile set, falling back to 1 default profile: "default"
+2025-11-02T20:21:16.518-03:00  INFO 19320 --- [carrito] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-11-02T20:21:16.530-03:00  INFO 19320 --- [carrito] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 3 ms. Found 0 JPA repository interfaces.
+2025-11-02T20:21:17.003-03:00  INFO 19320 --- [carrito] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8180 (http)
+2025-11-02T20:21:17.014-03:00  INFO 19320 --- [carrito] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-11-02T20:21:17.014-03:00  INFO 19320 --- [carrito] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.48]
+2025-11-02T20:21:17.054-03:00  INFO 19320 --- [carrito] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-11-02T20:21:17.055-03:00  INFO 19320 --- [carrito] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 832 ms
+2025-11-02T20:21:17.163-03:00  INFO 19320 --- [carrito] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-11-02T20:21:17.196-03:00  INFO 19320 --- [carrito] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.33.Final
+2025-11-02T20:21:17.268-03:00  INFO 19320 --- [carrito] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-11-02T20:21:17.476-03:00  INFO 19320 --- [carrito] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-11-02T20:21:17.499-03:00  INFO 19320 --- [carrito] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-11-02T20:21:17.694-03:00  INFO 19320 --- [carrito] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@41582899
+2025-11-02T20:21:17.696-03:00  INFO 19320 --- [carrito] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-11-02T20:21:17.730-03:00  WARN 19320 --- [carrito] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-11-02T20:21:17.731-03:00  WARN 19320 --- [carrito] [main] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-11-02T20:21:17.746-03:00  INFO 19320 --- [carrito] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-11-02T20:21:17.946-03:00  INFO 19320 --- [carrito] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-11-02T20:21:17.950-03:00  INFO 19320 --- [carrito] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-11-02T20:21:18.003-03:00  WARN 19320 --- [carrito] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-11-02T20:21:18.246-03:00  WARN 19320 --- [carrito] [main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: ebf30a43-fa1d-4b77-b738-c8ecec72aeee
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-11-02T20:21:18.256-03:00  INFO 19320 --- [carrito] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2025-11-02T20:21:18.366-03:00  INFO 19320 --- [carrito] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8180 (http) with context path '/'
+2025-11-02T20:21:18.373-03:00  INFO 19320 --- [carrito] [main] huerto.carrito.CarritoApplication        : Started CarritoApplication in 2.492 seconds (process running for 2.706)
+2025-11-02T20:21:23.723-03:00  INFO 19320 --- [carrito] [http-nio-8180-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-11-02T20:21:23.724-03:00  INFO 19320 --- [carrito] [http-nio-8180-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-11-02T20:21:23.725-03:00  INFO 19320 --- [carrito] [http-nio-8180-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-11-02T20:29:24.096-03:00  INFO 19320 --- [carrito] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-11-02T20:29:24.267-03:00  INFO 19320 --- [carrito] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-11-02T20:29:24.271-03:00  INFO 19320 --- [carrito] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-11-02T20:29:24.273-03:00  INFO 19320 --- [carrito] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-11-02T20:29:24.278-03:00  INFO 19320 --- [carrito] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-11-02T20:29:48.842-03:00  INFO 29616 --- [carrito] [main] huerto.carrito.CarritoApplication        : Starting CarritoApplication using Java 17.0.12 with PID 29616 (C:\Users\twitc\Documents\GitHub\Grupo08-Jara-Concha-Peralta\carrito\target\classes started by twitc in C:\Users\twitc\Documents\GitHub\Grupo08-Jara-Concha-Peralta\carrito)
+2025-11-02T20:29:48.844-03:00  INFO 29616 --- [carrito] [main] huerto.carrito.CarritoApplication        : No active profile set, falling back to 1 default profile: "default"
+2025-11-02T20:29:49.237-03:00  INFO 29616 --- [carrito] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-11-02T20:29:49.245-03:00  INFO 29616 --- [carrito] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 2 ms. Found 0 JPA repository interfaces.
+2025-11-02T20:29:49.673-03:00  INFO 29616 --- [carrito] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8180 (http)
+2025-11-02T20:29:49.684-03:00  INFO 29616 --- [carrito] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-11-02T20:29:49.685-03:00  INFO 29616 --- [carrito] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.48]
+2025-11-02T20:29:49.728-03:00  INFO 29616 --- [carrito] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-11-02T20:29:49.729-03:00  INFO 29616 --- [carrito] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 831 ms
+2025-11-02T20:29:49.833-03:00  INFO 29616 --- [carrito] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-11-02T20:29:49.864-03:00  INFO 29616 --- [carrito] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.33.Final
+2025-11-02T20:29:49.886-03:00  INFO 29616 --- [carrito] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-11-02T20:29:50.053-03:00  INFO 29616 --- [carrito] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-11-02T20:29:50.070-03:00  INFO 29616 --- [carrito] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-11-02T20:29:50.271-03:00  INFO 29616 --- [carrito] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@592a1882
+2025-11-02T20:29:50.273-03:00  INFO 29616 --- [carrito] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-11-02T20:29:50.302-03:00  WARN 29616 --- [carrito] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-11-02T20:29:50.303-03:00  WARN 29616 --- [carrito] [main] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-11-02T20:29:50.318-03:00  INFO 29616 --- [carrito] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-11-02T20:29:50.515-03:00  INFO 29616 --- [carrito] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-11-02T20:29:50.519-03:00  INFO 29616 --- [carrito] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-11-02T20:29:50.568-03:00  WARN 29616 --- [carrito] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-11-02T20:29:50.814-03:00  INFO 29616 --- [carrito] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2025-11-02T20:29:50.932-03:00  INFO 29616 --- [carrito] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8180 (http) with context path '/'
+2025-11-02T20:29:50.938-03:00  INFO 29616 --- [carrito] [main] huerto.carrito.CarritoApplication        : Started CarritoApplication in 2.422 seconds (process running for 2.629)
+2025-11-02T20:30:31.714-03:00  INFO 29616 --- [carrito] [http-nio-8180-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-11-02T20:30:31.714-03:00  INFO 29616 --- [carrito] [http-nio-8180-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-11-02T20:30:31.715-03:00  INFO 29616 --- [carrito] [http-nio-8180-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2025-11-02T20:35:17.854-03:00  INFO 29616 --- [carrito] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-11-02T20:35:18.012-03:00  INFO 29616 --- [carrito] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-11-02T20:35:18.015-03:00  INFO 29616 --- [carrito] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-11-02T20:35:18.016-03:00  INFO 29616 --- [carrito] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-11-02T20:35:18.022-03:00  INFO 29616 --- [carrito] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-11-02T20:35:41.507-03:00  INFO 20236 --- [carrito] [main] huerto.carrito.CarritoApplication        : Starting CarritoApplication using Java 17.0.12 with PID 20236 (C:\Users\twitc\Documents\GitHub\Grupo08-Jara-Concha-Peralta\carrito\target\classes started by twitc in C:\Users\twitc\Documents\GitHub\Grupo08-Jara-Concha-Peralta\carrito)
+2025-11-02T20:35:41.510-03:00  INFO 20236 --- [carrito] [main] huerto.carrito.CarritoApplication        : No active profile set, falling back to 1 default profile: "default"
+2025-11-02T20:35:42.110-03:00  INFO 20236 --- [carrito] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-11-02T20:35:42.125-03:00  INFO 20236 --- [carrito] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 5 ms. Found 0 JPA repository interfaces.
+2025-11-02T20:35:42.945-03:00  INFO 20236 --- [carrito] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8180 (http)
+2025-11-02T20:35:42.966-03:00  INFO 20236 --- [carrito] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-11-02T20:35:42.968-03:00  INFO 20236 --- [carrito] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.48]
+2025-11-02T20:35:43.046-03:00  INFO 20236 --- [carrito] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-11-02T20:35:43.046-03:00  INFO 20236 --- [carrito] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1462 ms
+2025-11-02T20:35:43.217-03:00  INFO 20236 --- [carrito] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-11-02T20:35:43.252-03:00  INFO 20236 --- [carrito] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.33.Final
+2025-11-02T20:35:43.276-03:00  INFO 20236 --- [carrito] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-11-02T20:35:43.508-03:00  INFO 20236 --- [carrito] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-11-02T20:35:43.534-03:00  INFO 20236 --- [carrito] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-11-02T20:35:43.774-03:00  INFO 20236 --- [carrito] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@595814a1
+2025-11-02T20:35:43.776-03:00  INFO 20236 --- [carrito] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-11-02T20:35:43.813-03:00  WARN 20236 --- [carrito] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-11-02T20:35:43.815-03:00  WARN 20236 --- [carrito] [main] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-11-02T20:35:43.830-03:00  INFO 20236 --- [carrito] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-11-02T20:35:44.068-03:00  INFO 20236 --- [carrito] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-11-02T20:35:44.073-03:00  INFO 20236 --- [carrito] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-11-02T20:35:44.151-03:00  WARN 20236 --- [carrito] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-11-02T20:35:44.417-03:00  WARN 20236 --- [carrito] [main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 473c5f5e-d94d-4b62-8de6-82ee368e2bd5
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-11-02T20:35:44.428-03:00  INFO 20236 --- [carrito] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2025-11-02T20:35:44.542-03:00  INFO 20236 --- [carrito] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8180 (http) with context path '/'
+2025-11-02T20:35:44.548-03:00  INFO 20236 --- [carrito] [main] huerto.carrito.CarritoApplication        : Started CarritoApplication in 3.732 seconds (process running for 4.131)
+2025-11-02T20:35:56.851-03:00  INFO 20236 --- [carrito] [http-nio-8180-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-11-02T20:35:56.852-03:00  INFO 20236 --- [carrito] [http-nio-8180-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-11-02T20:35:56.853-03:00  INFO 20236 --- [carrito] [http-nio-8180-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-11-02T20:37:50.066-03:00  INFO 20236 --- [carrito] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-11-02T20:37:50.251-03:00  INFO 20236 --- [carrito] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-11-02T20:37:50.254-03:00  INFO 20236 --- [carrito] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-11-02T20:37:50.257-03:00  INFO 20236 --- [carrito] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-11-02T20:37:50.265-03:00  INFO 20236 --- [carrito] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-11-02T20:38:28.514-03:00  INFO 29364 --- [carrito] [main] huerto.carrito.CarritoApplication        : Starting CarritoApplication using Java 17.0.12 with PID 29364 (C:\Users\twitc\Documents\GitHub\Grupo08-Jara-Concha-Peralta\carrito\target\classes started by twitc in C:\Users\twitc\Documents\GitHub\Grupo08-Jara-Concha-Peralta\carrito)
+2025-11-02T20:38:28.516-03:00  INFO 29364 --- [carrito] [main] huerto.carrito.CarritoApplication        : No active profile set, falling back to 1 default profile: "default"
+2025-11-02T20:38:29.051-03:00  INFO 29364 --- [carrito] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-11-02T20:38:29.066-03:00  INFO 29364 --- [carrito] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 6 ms. Found 0 JPA repository interfaces.
+2025-11-02T20:38:30.059-03:00  INFO 29364 --- [carrito] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8180 (http)
+2025-11-02T20:38:30.110-03:00  INFO 29364 --- [carrito] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-11-02T20:38:30.111-03:00  INFO 29364 --- [carrito] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.48]
+2025-11-02T20:38:30.194-03:00  INFO 29364 --- [carrito] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-11-02T20:38:30.194-03:00  INFO 29364 --- [carrito] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1608 ms
+2025-11-02T20:38:30.375-03:00  INFO 29364 --- [carrito] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-11-02T20:38:30.433-03:00  INFO 29364 --- [carrito] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.33.Final
+2025-11-02T20:38:30.470-03:00  INFO 29364 --- [carrito] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-11-02T20:38:30.734-03:00  INFO 29364 --- [carrito] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-11-02T20:38:30.762-03:00  INFO 29364 --- [carrito] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-11-02T20:38:31.096-03:00  INFO 29364 --- [carrito] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1179fc8c
+2025-11-02T20:38:31.099-03:00  INFO 29364 --- [carrito] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-11-02T20:38:31.154-03:00  WARN 29364 --- [carrito] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-11-02T20:38:31.157-03:00  WARN 29364 --- [carrito] [main] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-11-02T20:38:31.182-03:00  INFO 29364 --- [carrito] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-11-02T20:38:31.506-03:00  INFO 29364 --- [carrito] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-11-02T20:38:31.513-03:00  INFO 29364 --- [carrito] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-11-02T20:38:31.583-03:00  WARN 29364 --- [carrito] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-11-02T20:38:31.652-03:00  INFO 29364 --- [carrito] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name userDetailsService
+2025-11-02T20:38:32.285-03:00  INFO 29364 --- [carrito] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8180 (http) with context path '/'
+2025-11-02T20:38:32.300-03:00  INFO 29364 --- [carrito] [main] huerto.carrito.CarritoApplication        : Started CarritoApplication in 4.404 seconds (process running for 4.663)
+2025-11-02T20:38:38.962-03:00  INFO 29364 --- [carrito] [http-nio-8180-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-11-02T20:38:38.963-03:00  INFO 29364 --- [carrito] [http-nio-8180-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-11-02T20:38:38.964-03:00  INFO 29364 --- [carrito] [http-nio-8180-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-11-02T20:40:06.442-03:00  INFO 29364 --- [carrito] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-11-02T20:40:06.596-03:00  INFO 29364 --- [carrito] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-11-02T20:40:06.600-03:00  INFO 29364 --- [carrito] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-11-02T20:40:06.601-03:00  INFO 29364 --- [carrito] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-11-02T20:40:06.605-03:00  INFO 29364 --- [carrito] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-11-02T20:40:23.300-03:00  INFO 21480 --- [carrito] [main] huerto.carrito.CarritoApplication        : Starting CarritoApplication using Java 17.0.12 with PID 21480 (C:\Users\twitc\Documents\GitHub\Grupo08-Jara-Concha-Peralta\carrito\target\classes started by twitc in C:\Users\twitc\Documents\GitHub\Grupo08-Jara-Concha-Peralta\carrito)
+2025-11-02T20:40:23.302-03:00  INFO 21480 --- [carrito] [main] huerto.carrito.CarritoApplication        : No active profile set, falling back to 1 default profile: "default"
+2025-11-02T20:40:23.631-03:00  INFO 21480 --- [carrito] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-11-02T20:40:23.639-03:00  INFO 21480 --- [carrito] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 2 ms. Found 0 JPA repository interfaces.
+2025-11-02T20:40:24.175-03:00  INFO 21480 --- [carrito] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8180 (http)
+2025-11-02T20:40:24.204-03:00  INFO 21480 --- [carrito] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-11-02T20:40:24.205-03:00  INFO 21480 --- [carrito] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.48]
+2025-11-02T20:40:24.270-03:00  INFO 21480 --- [carrito] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-11-02T20:40:24.271-03:00  INFO 21480 --- [carrito] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 929 ms
+2025-11-02T20:40:24.381-03:00  INFO 21480 --- [carrito] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-11-02T20:40:24.413-03:00  INFO 21480 --- [carrito] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.33.Final
+2025-11-02T20:40:24.433-03:00  INFO 21480 --- [carrito] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-11-02T20:40:24.603-03:00  INFO 21480 --- [carrito] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-11-02T20:40:24.626-03:00  INFO 21480 --- [carrito] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-11-02T20:40:24.838-03:00  INFO 21480 --- [carrito] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@12aa381f
+2025-11-02T20:40:24.839-03:00  INFO 21480 --- [carrito] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-11-02T20:40:24.870-03:00  WARN 21480 --- [carrito] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-11-02T20:40:24.871-03:00  WARN 21480 --- [carrito] [main] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-11-02T20:40:24.886-03:00  INFO 21480 --- [carrito] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-11-02T20:40:25.123-03:00  INFO 21480 --- [carrito] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-11-02T20:40:25.128-03:00  INFO 21480 --- [carrito] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-11-02T20:40:25.172-03:00  WARN 21480 --- [carrito] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-11-02T20:40:25.222-03:00  INFO 21480 --- [carrito] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name userDetailsService
+2025-11-02T20:40:25.660-03:00  INFO 21480 --- [carrito] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8180 (http) with context path '/'
+2025-11-02T20:40:25.665-03:00  INFO 21480 --- [carrito] [main] huerto.carrito.CarritoApplication        : Started CarritoApplication in 2.684 seconds (process running for 2.891)
+2025-11-02T20:40:30.181-03:00  INFO 21480 --- [carrito] [http-nio-8180-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-11-02T20:40:30.182-03:00  INFO 21480 --- [carrito] [http-nio-8180-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-11-02T20:40:30.183-03:00  INFO 21480 --- [carrito] [http-nio-8180-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-11-02T20:41:55.233-03:00  INFO 21480 --- [carrito] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-11-02T20:41:55.478-03:00  INFO 21480 --- [carrito] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-11-02T20:41:55.497-03:00  INFO 21480 --- [carrito] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-11-02T20:41:55.501-03:00  INFO 21480 --- [carrito] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-11-02T20:41:55.528-03:00  INFO 21480 --- [carrito] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-11-02T20:42:14.520-03:00  INFO 22844 --- [carrito] [main] huerto.carrito.CarritoApplication        : Starting CarritoApplication using Java 17.0.12 with PID 22844 (C:\Users\twitc\Documents\GitHub\Grupo08-Jara-Concha-Peralta\carrito\target\classes started by twitc in C:\Users\twitc\Documents\GitHub\Grupo08-Jara-Concha-Peralta\carrito)
+2025-11-02T20:42:14.522-03:00  INFO 22844 --- [carrito] [main] huerto.carrito.CarritoApplication        : No active profile set, falling back to 1 default profile: "default"
+2025-11-02T20:42:15.082-03:00  INFO 22844 --- [carrito] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-11-02T20:42:15.095-03:00  INFO 22844 --- [carrito] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 6 ms. Found 0 JPA repository interfaces.
+2025-11-02T20:42:15.881-03:00  INFO 22844 --- [carrito] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8180 (http)
+2025-11-02T20:42:15.894-03:00  INFO 22844 --- [carrito] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-11-02T20:42:15.894-03:00  INFO 22844 --- [carrito] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.48]
+2025-11-02T20:42:15.948-03:00  INFO 22844 --- [carrito] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-11-02T20:42:15.948-03:00  INFO 22844 --- [carrito] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1359 ms
+2025-11-02T20:42:16.058-03:00  INFO 22844 --- [carrito] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-11-02T20:42:16.090-03:00  INFO 22844 --- [carrito] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.33.Final
+2025-11-02T20:42:16.110-03:00  INFO 22844 --- [carrito] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-11-02T20:42:16.284-03:00  INFO 22844 --- [carrito] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-11-02T20:42:16.308-03:00  INFO 22844 --- [carrito] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-11-02T20:42:16.698-03:00  INFO 22844 --- [carrito] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@12aa381f
+2025-11-02T20:42:16.700-03:00  INFO 22844 --- [carrito] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-11-02T20:42:16.759-03:00  WARN 22844 --- [carrito] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-11-02T20:42:16.761-03:00  WARN 22844 --- [carrito] [main] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-11-02T20:42:16.783-03:00  INFO 22844 --- [carrito] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-11-02T20:42:17.134-03:00  INFO 22844 --- [carrito] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-11-02T20:42:17.143-03:00  INFO 22844 --- [carrito] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-11-02T20:42:17.207-03:00  WARN 22844 --- [carrito] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-11-02T20:42:17.258-03:00  INFO 22844 --- [carrito] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name userDetailsService
+2025-11-02T20:42:17.983-03:00  INFO 22844 --- [carrito] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8180 (http) with context path '/'
+2025-11-02T20:42:17.994-03:00  INFO 22844 --- [carrito] [main] huerto.carrito.CarritoApplication        : Started CarritoApplication in 4.072 seconds (process running for 4.46)
+2025-11-02T20:43:14.850-03:00  INFO 22844 --- [carrito] [http-nio-8180-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-11-02T20:43:14.852-03:00  INFO 22844 --- [carrito] [http-nio-8180-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-11-02T20:43:14.854-03:00  INFO 22844 --- [carrito] [http-nio-8180-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2025-11-02T20:45:27.005-03:00  INFO 22844 --- [carrito] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-11-02T20:45:27.193-03:00  INFO 22844 --- [carrito] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-11-02T20:45:27.196-03:00  INFO 22844 --- [carrito] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-11-02T20:45:27.198-03:00  INFO 22844 --- [carrito] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-11-02T20:45:27.204-03:00  INFO 22844 --- [carrito] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-11-02T20:45:47.282-03:00  INFO 30008 --- [carrito] [main] huerto.carrito.CarritoApplication        : Starting CarritoApplication using Java 17.0.12 with PID 30008 (C:\Users\twitc\Documents\GitHub\Grupo08-Jara-Concha-Peralta\carrito\target\classes started by twitc in C:\Users\twitc\Documents\GitHub\Grupo08-Jara-Concha-Peralta\carrito)
+2025-11-02T20:45:47.285-03:00  INFO 30008 --- [carrito] [main] huerto.carrito.CarritoApplication        : No active profile set, falling back to 1 default profile: "default"
+2025-11-02T20:45:47.638-03:00  INFO 30008 --- [carrito] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-11-02T20:45:47.648-03:00  INFO 30008 --- [carrito] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 3 ms. Found 0 JPA repository interfaces.
+2025-11-02T20:45:48.155-03:00  INFO 30008 --- [carrito] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8180 (http)
+2025-11-02T20:45:48.165-03:00  INFO 30008 --- [carrito] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-11-02T20:45:48.165-03:00  INFO 30008 --- [carrito] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.48]
+2025-11-02T20:45:48.205-03:00  INFO 30008 --- [carrito] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-11-02T20:45:48.205-03:00  INFO 30008 --- [carrito] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 874 ms
+2025-11-02T20:45:48.320-03:00  INFO 30008 --- [carrito] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-11-02T20:45:48.352-03:00  INFO 30008 --- [carrito] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.33.Final
+2025-11-02T20:45:48.374-03:00  INFO 30008 --- [carrito] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-11-02T20:45:48.575-03:00  INFO 30008 --- [carrito] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-11-02T20:45:48.595-03:00  INFO 30008 --- [carrito] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-11-02T20:45:48.794-03:00  INFO 30008 --- [carrito] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1179fc8c
+2025-11-02T20:45:48.795-03:00  INFO 30008 --- [carrito] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-11-02T20:45:48.827-03:00  WARN 30008 --- [carrito] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-11-02T20:45:48.828-03:00  WARN 30008 --- [carrito] [main] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-11-02T20:45:48.843-03:00  INFO 30008 --- [carrito] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-11-02T20:45:49.049-03:00  INFO 30008 --- [carrito] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-11-02T20:45:49.054-03:00  INFO 30008 --- [carrito] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-11-02T20:45:49.093-03:00  WARN 30008 --- [carrito] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-11-02T20:45:49.125-03:00  INFO 30008 --- [carrito] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name userDetailsService
+2025-11-02T20:45:49.525-03:00  INFO 30008 --- [carrito] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8180 (http) with context path '/'
+2025-11-02T20:45:49.532-03:00  INFO 30008 --- [carrito] [main] huerto.carrito.CarritoApplication        : Started CarritoApplication in 2.6 seconds (process running for 2.833)
+2025-11-02T20:45:54.536-03:00  INFO 30008 --- [carrito] [http-nio-8180-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-11-02T20:45:54.536-03:00  INFO 30008 --- [carrito] [http-nio-8180-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-11-02T20:45:54.538-03:00  INFO 30008 --- [carrito] [http-nio-8180-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2025-11-02T20:49:12.083-03:00  INFO 30008 --- [carrito] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-11-02T20:49:12.243-03:00  INFO 30008 --- [carrito] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-11-02T20:49:12.246-03:00  INFO 30008 --- [carrito] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-11-02T20:49:12.248-03:00  INFO 30008 --- [carrito] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-11-02T20:49:12.255-03:00  INFO 30008 --- [carrito] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-11-02T20:49:30.828-03:00  INFO 17680 --- [carrito] [main] huerto.carrito.CarritoApplication        : Starting CarritoApplication using Java 17.0.12 with PID 17680 (C:\Users\twitc\Documents\GitHub\Grupo08-Jara-Concha-Peralta\carrito\target\classes started by twitc in C:\Users\twitc\Documents\GitHub\Grupo08-Jara-Concha-Peralta\carrito)
+2025-11-02T20:49:30.830-03:00  INFO 17680 --- [carrito] [main] huerto.carrito.CarritoApplication        : No active profile set, falling back to 1 default profile: "default"
+2025-11-02T20:49:31.230-03:00  INFO 17680 --- [carrito] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-11-02T20:49:31.240-03:00  INFO 17680 --- [carrito] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 3 ms. Found 0 JPA repository interfaces.
+2025-11-02T20:49:32.026-03:00  INFO 17680 --- [carrito] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8180 (http)
+2025-11-02T20:49:32.043-03:00  INFO 17680 --- [carrito] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-11-02T20:49:32.046-03:00  INFO 17680 --- [carrito] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.48]
+2025-11-02T20:49:32.131-03:00  INFO 17680 --- [carrito] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-11-02T20:49:32.132-03:00  INFO 17680 --- [carrito] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1242 ms
+2025-11-02T20:49:32.313-03:00  INFO 17680 --- [carrito] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-11-02T20:49:32.366-03:00  INFO 17680 --- [carrito] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.33.Final
+2025-11-02T20:49:32.403-03:00  INFO 17680 --- [carrito] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-11-02T20:49:32.691-03:00  INFO 17680 --- [carrito] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-11-02T20:49:32.727-03:00  INFO 17680 --- [carrito] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-11-02T20:49:33.051-03:00  INFO 17680 --- [carrito] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@3c9e19de
+2025-11-02T20:49:33.053-03:00  INFO 17680 --- [carrito] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-11-02T20:49:33.123-03:00  WARN 17680 --- [carrito] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-11-02T20:49:33.125-03:00  WARN 17680 --- [carrito] [main] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-11-02T20:49:33.147-03:00  INFO 17680 --- [carrito] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-11-02T20:49:33.489-03:00  INFO 17680 --- [carrito] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-11-02T20:49:33.494-03:00  INFO 17680 --- [carrito] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-11-02T20:49:33.563-03:00  WARN 17680 --- [carrito] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-11-02T20:49:33.623-03:00  INFO 17680 --- [carrito] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name userDetailsService
+2025-11-02T20:49:34.313-03:00  INFO 17680 --- [carrito] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8180 (http) with context path '/'
+2025-11-02T20:49:34.324-03:00  INFO 17680 --- [carrito] [main] huerto.carrito.CarritoApplication        : Started CarritoApplication in 3.892 seconds (process running for 4.111)
+2025-11-02T20:49:38.585-03:00  INFO 17680 --- [carrito] [http-nio-8180-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-11-02T20:49:38.585-03:00  INFO 17680 --- [carrito] [http-nio-8180-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-11-02T20:49:38.586-03:00  INFO 17680 --- [carrito] [http-nio-8180-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2025-11-02T20:52:30.494-03:00  INFO 17680 --- [carrito] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-11-02T20:52:30.665-03:00  INFO 17680 --- [carrito] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-11-02T20:52:30.668-03:00  INFO 17680 --- [carrito] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-11-02T20:52:30.670-03:00  INFO 17680 --- [carrito] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-11-02T20:52:30.680-03:00  INFO 17680 --- [carrito] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-11-02T21:04:12.814-03:00  INFO 18248 --- [carrito] [main] huerto.carrito.CarritoApplication        : Starting CarritoApplication using Java 17.0.12 with PID 18248 (C:\Users\twitc\Documents\GitHub\Grupo08-Jara-Concha-Peralta\carrito\target\classes started by twitc in C:\Users\twitc\Documents\GitHub\Grupo08-Jara-Concha-Peralta\carrito)
+2025-11-02T21:04:12.818-03:00  INFO 18248 --- [carrito] [main] huerto.carrito.CarritoApplication        : No active profile set, falling back to 1 default profile: "default"
+2025-11-02T21:04:13.262-03:00  INFO 18248 --- [carrito] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-11-02T21:04:13.275-03:00  INFO 18248 --- [carrito] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 7 ms. Found 0 JPA repository interfaces.
+2025-11-02T21:04:13.673-03:00  INFO 18248 --- [carrito] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8180 (http)
+2025-11-02T21:04:13.681-03:00  INFO 18248 --- [carrito] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-11-02T21:04:13.682-03:00  INFO 18248 --- [carrito] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.48]
+2025-11-02T21:04:13.723-03:00  INFO 18248 --- [carrito] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-11-02T21:04:13.724-03:00  INFO 18248 --- [carrito] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 860 ms
+2025-11-02T21:04:13.835-03:00  INFO 18248 --- [carrito] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-11-02T21:04:13.868-03:00  INFO 18248 --- [carrito] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.33.Final
+2025-11-02T21:04:13.891-03:00  INFO 18248 --- [carrito] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-11-02T21:04:14.051-03:00  INFO 18248 --- [carrito] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-11-02T21:04:14.073-03:00  INFO 18248 --- [carrito] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-11-02T21:04:14.303-03:00  INFO 18248 --- [carrito] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@4b32465
+2025-11-02T21:04:14.305-03:00  INFO 18248 --- [carrito] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-11-02T21:04:14.360-03:00  WARN 18248 --- [carrito] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-11-02T21:04:14.362-03:00  WARN 18248 --- [carrito] [main] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-11-02T21:04:14.382-03:00  INFO 18248 --- [carrito] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-11-02T21:04:14.615-03:00  INFO 18248 --- [carrito] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-11-02T21:04:14.619-03:00  INFO 18248 --- [carrito] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-11-02T21:04:14.664-03:00  WARN 18248 --- [carrito] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-11-02T21:04:14.696-03:00  INFO 18248 --- [carrito] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name userDetailsService
+2025-11-02T21:04:15.157-03:00  INFO 18248 --- [carrito] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8180 (http) with context path '/'
+2025-11-02T21:04:15.163-03:00  INFO 18248 --- [carrito] [main] huerto.carrito.CarritoApplication        : Started CarritoApplication in 2.698 seconds (process running for 2.943)
+2025-11-02T21:04:30.791-03:00  INFO 18248 --- [carrito] [http-nio-8180-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-11-02T21:04:30.791-03:00  INFO 18248 --- [carrito] [http-nio-8180-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-11-02T21:04:30.793-03:00  INFO 18248 --- [carrito] [http-nio-8180-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-11-02T21:06:34.641-03:00  INFO 18248 --- [carrito] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-11-02T21:06:34.798-03:00  INFO 18248 --- [carrito] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-11-02T21:06:34.801-03:00  INFO 18248 --- [carrito] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-11-02T21:06:34.802-03:00  INFO 18248 --- [carrito] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-11-02T21:06:34.809-03:00  INFO 18248 --- [carrito] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-11-02T21:06:58.498-03:00  INFO 27200 --- [carrito] [main] huerto.carrito.CarritoApplication        : Starting CarritoApplication using Java 17.0.12 with PID 27200 (C:\Users\twitc\Documents\GitHub\Grupo08-Jara-Concha-Peralta\carrito\target\classes started by twitc in C:\Users\twitc\Documents\GitHub\Grupo08-Jara-Concha-Peralta\carrito)
+2025-11-02T21:06:58.501-03:00  INFO 27200 --- [carrito] [main] huerto.carrito.CarritoApplication        : No active profile set, falling back to 1 default profile: "default"
+2025-11-02T21:06:58.863-03:00  INFO 27200 --- [carrito] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-11-02T21:06:58.874-03:00  INFO 27200 --- [carrito] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 3 ms. Found 0 JPA repository interfaces.
+2025-11-02T21:06:59.429-03:00  INFO 27200 --- [carrito] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8180 (http)
+2025-11-02T21:06:59.438-03:00  INFO 27200 --- [carrito] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-11-02T21:06:59.440-03:00  INFO 27200 --- [carrito] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.48]
+2025-11-02T21:06:59.481-03:00  INFO 27200 --- [carrito] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-11-02T21:06:59.482-03:00  INFO 27200 --- [carrito] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 929 ms
+2025-11-02T21:06:59.598-03:00  INFO 27200 --- [carrito] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-11-02T21:06:59.632-03:00  INFO 27200 --- [carrito] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.33.Final
+2025-11-02T21:06:59.654-03:00  INFO 27200 --- [carrito] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-11-02T21:06:59.825-03:00  INFO 27200 --- [carrito] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-11-02T21:06:59.846-03:00  INFO 27200 --- [carrito] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-11-02T21:07:00.047-03:00  INFO 27200 --- [carrito] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@3f3c5ecd
+2025-11-02T21:07:00.049-03:00  INFO 27200 --- [carrito] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-11-02T21:07:00.080-03:00  WARN 27200 --- [carrito] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-11-02T21:07:00.082-03:00  WARN 27200 --- [carrito] [main] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-11-02T21:07:00.094-03:00  INFO 27200 --- [carrito] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-11-02T21:07:00.298-03:00  INFO 27200 --- [carrito] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-11-02T21:07:00.301-03:00  INFO 27200 --- [carrito] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-11-02T21:07:00.339-03:00  WARN 27200 --- [carrito] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-11-02T21:07:00.372-03:00  INFO 27200 --- [carrito] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name userDetailsService
+2025-11-02T21:07:00.835-03:00  INFO 27200 --- [carrito] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8180 (http) with context path '/'
+2025-11-02T21:07:00.841-03:00  INFO 27200 --- [carrito] [main] huerto.carrito.CarritoApplication        : Started CarritoApplication in 2.685 seconds (process running for 2.905)
+2025-11-02T21:07:03.768-03:00  INFO 27200 --- [carrito] [http-nio-8180-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-11-02T21:07:03.768-03:00  INFO 27200 --- [carrito] [http-nio-8180-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-11-02T21:07:03.770-03:00  INFO 27200 --- [carrito] [http-nio-8180-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2025-11-02T21:08:18.714-03:00  INFO 27200 --- [carrito] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-11-02T21:08:18.905-03:00  INFO 27200 --- [carrito] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-11-02T21:08:18.908-03:00  INFO 27200 --- [carrito] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-11-02T21:08:18.910-03:00  INFO 27200 --- [carrito] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-11-02T21:08:18.917-03:00  INFO 27200 --- [carrito] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-11-02T21:08:44.694-03:00  INFO 22172 --- [carrito] [main] huerto.carrito.CarritoApplication        : Starting CarritoApplication using Java 17.0.12 with PID 22172 (C:\Users\twitc\Documents\GitHub\Grupo08-Jara-Concha-Peralta\carrito\target\classes started by twitc in C:\Users\twitc\Documents\GitHub\Grupo08-Jara-Concha-Peralta\carrito)
+2025-11-02T21:08:44.699-03:00  INFO 22172 --- [carrito] [main] huerto.carrito.CarritoApplication        : No active profile set, falling back to 1 default profile: "default"
+2025-11-02T21:08:45.298-03:00  INFO 22172 --- [carrito] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-11-02T21:08:45.312-03:00  INFO 22172 --- [carrito] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 4 ms. Found 0 JPA repository interfaces.
+2025-11-02T21:08:46.335-03:00  INFO 22172 --- [carrito] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8180 (http)
+2025-11-02T21:08:46.350-03:00  INFO 22172 --- [carrito] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-11-02T21:08:46.372-03:00  INFO 22172 --- [carrito] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.48]
+2025-11-02T21:08:46.452-03:00  INFO 22172 --- [carrito] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-11-02T21:08:46.452-03:00  INFO 22172 --- [carrito] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1673 ms
+2025-11-02T21:08:46.638-03:00  INFO 22172 --- [carrito] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-11-02T21:08:46.691-03:00  INFO 22172 --- [carrito] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.33.Final
+2025-11-02T21:08:46.729-03:00  INFO 22172 --- [carrito] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-11-02T21:08:47.006-03:00  INFO 22172 --- [carrito] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-11-02T21:08:47.043-03:00  INFO 22172 --- [carrito] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-11-02T21:08:47.363-03:00  INFO 22172 --- [carrito] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@60f9dc7e
+2025-11-02T21:08:47.365-03:00  INFO 22172 --- [carrito] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-11-02T21:08:47.413-03:00  WARN 22172 --- [carrito] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-11-02T21:08:47.415-03:00  WARN 22172 --- [carrito] [main] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-11-02T21:08:47.436-03:00  INFO 22172 --- [carrito] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-11-02T21:08:47.796-03:00  INFO 22172 --- [carrito] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-11-02T21:08:47.804-03:00  INFO 22172 --- [carrito] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-11-02T21:08:47.910-03:00  WARN 22172 --- [carrito] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-11-02T21:08:47.963-03:00  INFO 22172 --- [carrito] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name userDetailsService
+2025-11-02T21:08:48.720-03:00  INFO 22172 --- [carrito] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8180 (http) with context path '/'
+2025-11-02T21:08:48.734-03:00  INFO 22172 --- [carrito] [main] huerto.carrito.CarritoApplication        : Started CarritoApplication in 4.666 seconds (process running for 5.038)
+2025-11-02T21:11:25.556-03:00  INFO 22172 --- [carrito] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-11-02T21:11:25.746-03:00  INFO 22172 --- [carrito] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-11-02T21:11:25.750-03:00  INFO 22172 --- [carrito] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-11-02T21:11:25.752-03:00  INFO 22172 --- [carrito] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-11-02T21:11:25.761-03:00  INFO 22172 --- [carrito] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-11-02T21:11:51.742-03:00  INFO 2760 --- [carrito] [main] huerto.carrito.CarritoApplication        : Starting CarritoApplication using Java 17.0.12 with PID 2760 (C:\Users\twitc\Documents\GitHub\Grupo08-Jara-Concha-Peralta\carrito\target\classes started by twitc in C:\Users\twitc\Documents\GitHub\Grupo08-Jara-Concha-Peralta\carrito)
+2025-11-02T21:11:51.744-03:00  INFO 2760 --- [carrito] [main] huerto.carrito.CarritoApplication        : No active profile set, falling back to 1 default profile: "default"
+2025-11-02T21:11:52.090-03:00  INFO 2760 --- [carrito] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-11-02T21:11:52.098-03:00  INFO 2760 --- [carrito] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 2 ms. Found 0 JPA repository interfaces.
+2025-11-02T21:11:52.714-03:00  INFO 2760 --- [carrito] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8180 (http)
+2025-11-02T21:11:52.724-03:00  INFO 2760 --- [carrito] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-11-02T21:11:52.724-03:00  INFO 2760 --- [carrito] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.48]
+2025-11-02T21:11:52.769-03:00  INFO 2760 --- [carrito] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-11-02T21:11:52.769-03:00  INFO 2760 --- [carrito] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 987 ms
+2025-11-02T21:11:52.882-03:00  INFO 2760 --- [carrito] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-11-02T21:11:52.916-03:00  INFO 2760 --- [carrito] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.33.Final
+2025-11-02T21:11:52.937-03:00  INFO 2760 --- [carrito] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-11-02T21:11:53.122-03:00  INFO 2760 --- [carrito] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-11-02T21:11:53.148-03:00  INFO 2760 --- [carrito] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-11-02T21:11:53.390-03:00  INFO 2760 --- [carrito] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1ed9d173
+2025-11-02T21:11:53.392-03:00  INFO 2760 --- [carrito] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-11-02T21:11:53.420-03:00  WARN 2760 --- [carrito] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-11-02T21:11:53.420-03:00  WARN 2760 --- [carrito] [main] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-11-02T21:11:53.434-03:00  INFO 2760 --- [carrito] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-11-02T21:11:53.654-03:00  INFO 2760 --- [carrito] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-11-02T21:11:53.660-03:00  INFO 2760 --- [carrito] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-11-02T21:11:53.703-03:00  WARN 2760 --- [carrito] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-11-02T21:11:53.736-03:00  INFO 2760 --- [carrito] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name userDetailsService
+2025-11-02T21:11:54.147-03:00  INFO 2760 --- [carrito] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8180 (http) with context path '/'
+2025-11-02T21:11:54.152-03:00  INFO 2760 --- [carrito] [main] huerto.carrito.CarritoApplication        : Started CarritoApplication in 2.716 seconds (process running for 2.931)
+2025-11-02T21:13:04.869-03:00  INFO 2760 --- [carrito] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-11-02T21:13:05.060-03:00  INFO 2760 --- [carrito] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-11-02T21:13:05.064-03:00  INFO 2760 --- [carrito] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-11-02T21:13:05.067-03:00  INFO 2760 --- [carrito] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-11-02T21:13:05.079-03:00  INFO 2760 --- [carrito] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-11-02T21:13:41.561-03:00  INFO 18724 --- [carrito] [main] huerto.carrito.CarritoApplication        : Starting CarritoApplication using Java 17.0.12 with PID 18724 (C:\Users\twitc\Documents\GitHub\Grupo08-Jara-Concha-Peralta\carrito\target\classes started by twitc in C:\Users\twitc\Documents\GitHub\Grupo08-Jara-Concha-Peralta\carrito)
+2025-11-02T21:13:41.565-03:00  INFO 18724 --- [carrito] [main] huerto.carrito.CarritoApplication        : No active profile set, falling back to 1 default profile: "default"
+2025-11-02T21:13:41.925-03:00  INFO 18724 --- [carrito] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-11-02T21:13:41.933-03:00  INFO 18724 --- [carrito] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 2 ms. Found 0 JPA repository interfaces.
+2025-11-02T21:13:42.450-03:00  INFO 18724 --- [carrito] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8180 (http)
+2025-11-02T21:13:42.459-03:00  INFO 18724 --- [carrito] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-11-02T21:13:42.460-03:00  INFO 18724 --- [carrito] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.48]
+2025-11-02T21:13:42.503-03:00  INFO 18724 --- [carrito] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-11-02T21:13:42.503-03:00  INFO 18724 --- [carrito] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 900 ms
+2025-11-02T21:13:42.624-03:00  INFO 18724 --- [carrito] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-11-02T21:13:42.657-03:00  INFO 18724 --- [carrito] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.33.Final
+2025-11-02T21:13:42.680-03:00  INFO 18724 --- [carrito] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-11-02T21:13:42.851-03:00  INFO 18724 --- [carrito] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-11-02T21:13:42.874-03:00  INFO 18724 --- [carrito] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-11-02T21:13:43.069-03:00  INFO 18724 --- [carrito] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@3f3c5ecd
+2025-11-02T21:13:43.070-03:00  INFO 18724 --- [carrito] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-11-02T21:13:43.102-03:00  WARN 18724 --- [carrito] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-11-02T21:13:43.103-03:00  WARN 18724 --- [carrito] [main] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-11-02T21:13:43.119-03:00  INFO 18724 --- [carrito] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-11-02T21:13:43.325-03:00  INFO 18724 --- [carrito] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-11-02T21:13:43.331-03:00  INFO 18724 --- [carrito] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-11-02T21:13:43.369-03:00  WARN 18724 --- [carrito] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-11-02T21:13:43.409-03:00  INFO 18724 --- [carrito] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name userDetailsService
+2025-11-02T21:13:43.859-03:00  INFO 18724 --- [carrito] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8180 (http) with context path '/'
+2025-11-02T21:13:43.865-03:00  INFO 18724 --- [carrito] [main] huerto.carrito.CarritoApplication        : Started CarritoApplication in 2.641 seconds (process running for 2.889)
+2025-11-02T21:13:53.658-03:00  INFO 18724 --- [carrito] [http-nio-8180-exec-3] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-11-02T21:13:53.658-03:00  INFO 18724 --- [carrito] [http-nio-8180-exec-3] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-11-02T21:13:53.661-03:00  INFO 18724 --- [carrito] [http-nio-8180-exec-3] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-11-02T21:14:06.516-03:00  INFO 18724 --- [carrito] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-11-02T21:14:06.734-03:00  INFO 18724 --- [carrito] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-11-02T21:14:06.736-03:00  INFO 18724 --- [carrito] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-11-02T21:14:06.738-03:00  INFO 18724 --- [carrito] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-11-02T21:14:06.743-03:00  INFO 18724 --- [carrito] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-11-02T21:14:32.743-03:00  INFO 30016 --- [carrito] [main] huerto.carrito.CarritoApplication        : Starting CarritoApplication using Java 17.0.12 with PID 30016 (C:\Users\twitc\Documents\GitHub\Grupo08-Jara-Concha-Peralta\carrito\target\classes started by twitc in C:\Users\twitc\Documents\GitHub\Grupo08-Jara-Concha-Peralta\carrito)
+2025-11-02T21:14:32.745-03:00  INFO 30016 --- [carrito] [main] huerto.carrito.CarritoApplication        : No active profile set, falling back to 1 default profile: "default"
+2025-11-02T21:14:33.084-03:00  INFO 30016 --- [carrito] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-11-02T21:14:33.096-03:00  INFO 30016 --- [carrito] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 5 ms. Found 0 JPA repository interfaces.
+2025-11-02T21:14:33.671-03:00  INFO 30016 --- [carrito] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8182 (http)
+2025-11-02T21:14:33.680-03:00  INFO 30016 --- [carrito] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-11-02T21:14:33.680-03:00  INFO 30016 --- [carrito] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.48]
+2025-11-02T21:14:33.722-03:00  INFO 30016 --- [carrito] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-11-02T21:14:33.723-03:00  INFO 30016 --- [carrito] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 937 ms
+2025-11-02T21:14:33.837-03:00  INFO 30016 --- [carrito] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-11-02T21:14:33.870-03:00  INFO 30016 --- [carrito] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.33.Final
+2025-11-02T21:14:33.894-03:00  INFO 30016 --- [carrito] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-11-02T21:14:34.058-03:00  INFO 30016 --- [carrito] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-11-02T21:14:34.078-03:00  INFO 30016 --- [carrito] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-11-02T21:14:34.276-03:00  INFO 30016 --- [carrito] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7f2c995b
+2025-11-02T21:14:34.277-03:00  INFO 30016 --- [carrito] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-11-02T21:14:34.306-03:00  WARN 30016 --- [carrito] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-11-02T21:14:34.307-03:00  WARN 30016 --- [carrito] [main] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-11-02T21:14:34.322-03:00  INFO 30016 --- [carrito] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-11-02T21:14:34.516-03:00  INFO 30016 --- [carrito] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-11-02T21:14:34.520-03:00  INFO 30016 --- [carrito] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-11-02T21:14:34.560-03:00  WARN 30016 --- [carrito] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-11-02T21:14:34.590-03:00  INFO 30016 --- [carrito] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name userDetailsService
+2025-11-02T21:14:34.981-03:00  INFO 30016 --- [carrito] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8182 (http) with context path '/'
+2025-11-02T21:14:34.986-03:00  INFO 30016 --- [carrito] [main] huerto.carrito.CarritoApplication        : Started CarritoApplication in 2.549 seconds (process running for 2.756)
+2025-11-02T21:14:43.916-03:00  INFO 30016 --- [carrito] [http-nio-8182-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-11-02T21:14:43.916-03:00  INFO 30016 --- [carrito] [http-nio-8182-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-11-02T21:14:43.919-03:00  INFO 30016 --- [carrito] [http-nio-8182-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-11-02T21:20:03.798-03:00  INFO 30016 --- [carrito] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-11-02T21:20:03.953-03:00  INFO 30016 --- [carrito] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-11-02T21:20:03.957-03:00  INFO 30016 --- [carrito] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-11-02T21:20:03.958-03:00  INFO 30016 --- [carrito] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-11-02T21:20:03.966-03:00  INFO 30016 --- [carrito] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

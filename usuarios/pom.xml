@@ -67,7 +67,19 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-validation</artifactId>
 		</dependency>		
-	</dependencies>
+	
+   <dependency>
+     <groupId>com.qingzhuge.framework</groupId>
+     <artifactId>qing-framework-security-base-facade</artifactId>
+     <version>1.0.1.5</version>
+   </dependency>
+ 
+   <dependency>
+     <groupId>com.qingzhuge.framework</groupId>
+     <artifactId>qing-framework-security-base-facade</artifactId>
+     <version>1.0.1.5</version>
+   </dependency>
+ </dependencies>
 
 	<build>
 		<plugins>

@@ -3,9 +3,13 @@ package service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder; 
 import org.springframework.stereotype.Service;
+
+import dto.RegisterRequestDto; 
+
 import modelo.Usuario;
-import modelo.Rol; 
+import modelo.RolEntity; 
 import repository.UsuarioRepository;
+import repository.RolRepository;
 
 import java.util.List;
 import java.util.Optional;
@@ -15,6 +19,9 @@ public class UsuarioService {
 
     @Autowired
     private UsuarioRepository usuarioRepository;
+
+    @Autowired
+    private RolRepository rolRepository;
 
     @Autowired
     private PasswordEncoder passwordEncoder; 
@@ -27,18 +34,27 @@ public class UsuarioService {
         return usuarioRepository.findById(id);
     }
 
-    public Usuario crearUsuario(Usuario usuario) {
-        if (usuarioRepository.findByCorreo(usuario.getCorreo()).isPresent()) {
+    public Usuario crearUsuario(RegisterRequestDto requestDto) {
+    if (usuarioRepository.findByCorreo(requestDto.getCorreo()).isPresent()) {
+         throw new RuntimeException("El correo ya está en uso"); 
+    }
 
-            throw new RuntimeException("El correo ya está en uso"); 
-        }
+        Usuario usuario = new Usuario();
+        
+        usuario.setNombre(requestDto.getNombre()); 
+        usuario.setCorreo(requestDto.getCorreo());
+        
+        usuario.setContraseña(passwordEncoder.encode(requestDto.getContraseña()));
+        usuario.setDireccion(requestDto.getDireccion());
+        usuario.setTelefono(requestDto.getTelefono());
 
-        usuario.setContraseña(passwordEncoder.encode(usuario.getContraseña()));
+        String rolNombre = "USER"; 
+        RolEntity rol = rolRepository.findByNombre(rolNombre)
+                .orElseThrow(() -> new RuntimeException("Error: Rol '" + rolNombre + "' no encontrado. " +
+                                                        "Asegúrate de que el rol exista en la tabla 'roles'."));
         
-        if (usuario.getRole() == null) {
-            usuario.setRole(Rol.USER);
-        }
-        
+        usuario.setRole(rol);
+
         return usuarioRepository.save(usuario);
     }
 
@@ -50,6 +66,7 @@ public class UsuarioService {
         }
 
         Usuario usuarioExistente = usuarioOpt.get();
+        
         usuarioExistente.setNombre(usuarioDetalles.getNombre());
         usuarioExistente.setCorreo(usuarioDetalles.getCorreo());
         
@@ -59,8 +76,10 @@ public class UsuarioService {
         
         usuarioExistente.setDireccion(usuarioDetalles.getDireccion());
         usuarioExistente.setTelefono(usuarioDetalles.getTelefono());
+
         return Optional.of(usuarioRepository.save(usuarioExistente));
     }
+
 
     public boolean borrarUsuario(Long id) {
         if (usuarioRepository.existsById(id)) {
