@@ -2,14 +2,13 @@ package huerto.carrito;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.autoconfigure.domain.EntityScan; // Importar
-import org.springframework.context.annotation.ComponentScan; // Importar
-import org.springframework.data.jpa.repository.config.EnableJpaRepositories; // Importar
+// Eliminamos las importaciones de JPA
+import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
-@ComponentScan(basePackages = {"huerto.carrito", "config", "repository", "modelo"})
-@EnableJpaRepositories(basePackages = "repository")
-@EntityScan(basePackages = "modelo")
+// CORRECCIÓN: Añadido "huerto.controller" al ComponentScan
+@ComponentScan(basePackages = {"huerto.carrito", "huerto.controller"})
+// Anotaciones @EnableJpaRepositories y @EntityScan eliminadas
 public class CarritoApplication {
 
 	public static void main(String[] args) {
