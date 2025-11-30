@@ -1,0 +1,67 @@
+name: CI/CD Pipeline Sumativa 3
+
+on:
+  push:
+    branches: [ "main", "master" ]
+
+env:
+  PROJECT_ID: ${{ secrets.GCP_PROJECT_ID }}
+  REGION: us-central1
+  REPO_NAME: mi-repo
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    # 1. Bajar el código
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    # 2. Autenticación con Google Cloud
+    - name: Google Auth
+      id: auth
+      uses: 'google-github-actions/auth@v1'
+      with:
+        credentials_json: '${{ secrets.GCP_SA_KEY }}'
+
+    # 3. Configurar Docker para GCR
+    - name: Configure Docker
+      run: |
+        gcloud auth configure-docker ${{ env.REGION }}-docker.pkg.dev --quiet
+
+    # 4. Construir y Subir Imágenes
+    - name: Build and Push Services
+      run: |
+        # --- USUARIOS ---
+        docker build -t ${{ env.REGION }}-docker.pkg.dev/${{ env.PROJECT_ID }}/${{ env.REPO_NAME }}/usuarios:latest ./usuarios
+        docker push ${{ env.REGION }}-docker.pkg.dev/${{ env.PROJECT_ID }}/${{ env.REPO_NAME }}/usuarios:latest
+        
+        # --- CARRITO ---
+        docker build -t ${{ env.REGION }}-docker.pkg.dev/${{ env.PROJECT_ID }}/${{ env.REPO_NAME }}/carrito:latest ./carrito
+        docker push ${{ env.REGION }}-docker.pkg.dev/${{ env.PROJECT_ID }}/${{ env.REPO_NAME }}/carrito:latest
+        
+        # --- CORE BACKEND (v6) ---
+        docker build -t ${{ env.REGION }}-docker.pkg.dev/${{ env.PROJECT_ID }}/${{ env.REPO_NAME }}/core-backend:latest ./core
+        docker push ${{ env.REGION }}-docker.pkg.dev/${{ env.PROJECT_ID }}/${{ env.REPO_NAME }}/core-backend:latest
+        
+        # --- API GATEWAY ---
+        docker build -t ${{ env.REGION }}-docker.pkg.dev/${{ env.PROJECT_ID }}/${{ env.REPO_NAME }}/api-gateway:latest ./gateway
+        docker push ${{ env.REGION }}-docker.pkg.dev/${{ env.PROJECT_ID }}/${{ env.REPO_NAME }}/api-gateway:latest
+
+    # 5. Desplegar en Swarm vía SSH
+    - name: Deploy to Swarm Manager
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.SSH_HOST }}
+        username: ${{ secrets.SSH_USERNAME }}
+        key: ${{ secrets.SSH_KEY }}
+        script: |
+          # Login explícito para refrescar credenciales en el Manager
+          gcloud auth print-access-token | sudo docker login -u oauth2accesstoken --password-stdin https://${{ env.REGION }}-docker.pkg.dev
+          
+          # Actualizar servicios forzando la nueva imagen
+          sudo docker service update --with-registry-auth --image ${{ env.REGION }}-docker.pkg.dev/${{ env.PROJECT_ID }}/${{ env.REPO_NAME }}/api-gateway:latest --force mi-app_gateway
+          sudo docker service update --with-registry-auth --image ${{ env.REGION }}-docker.pkg.dev/${{ env.PROJECT_ID }}/${{ env.REPO_NAME }}/usuarios:latest --force mi-app_usuarios
+          sudo docker service update --with-registry-auth --image ${{ env.REGION }}-docker.pkg.dev/${{ env.PROJECT_ID }}/${{ env.REPO_NAME }}/carrito:latest --force mi-app_carrito
+          sudo docker service update --with-registry-auth --image ${{ env.REGION }}-docker.pkg.dev/${{ env.PROJECT_ID }}/${{ env.REPO_NAME }}/core-backend:latest --force mi-app_core-backend
