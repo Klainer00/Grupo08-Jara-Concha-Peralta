@@ -1,0 +1,81 @@
+version: '3.8'
+
+services:
+  # 1. Base de Datos Compartida
+  mysqldb:
+    image: mysql:8.0
+    container_name: huerto_mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: mydatabase
+      MYSQL_USER: myuser
+      MYSQL_PASSWORD: password
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+    networks:
+      - huerto-net
+    healthcheck:
+      test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"]
+      timeout: 20s
+      retries: 10
+
+  # 2. Microservicio USUARIOS
+  usuarios:
+    build: ./usuarios
+    container_name: ms_usuarios
+    ports:
+      - "8180:8180"
+    environment:
+      - SERVER_PORT=8180
+      # Sobrescribimos la URL para que apunte al contenedor 'mysqldb' en vez de localhost
+      - SPRING_DATASOURCE_URL=jdbc:mysql://mysqldb:3306/mydatabase?allowPublicKeyRetrieval=true&useSSL=false
+      - SPRING_DATASOURCE_USERNAME=myuser
+      - SPRING_DATASOURCE_PASSWORD=password
+    depends_on:
+      mysqldb:
+        condition: service_healthy
+    networks:
+      - huerto-net
+
+  # 3. Microservicio CORE
+  core:
+    build: ./core
+    container_name: ms_core
+    ports:
+      - "8080:8080" # Asumiendo default de Spring
+    environment:
+      # Sobrescribimos la conexión a DB
+      - SPRING_DATASOURCE_URL=jdbc:mysql://mysqldb:3306/mydatabase?allowPublicKeyRetrieval=true&useSSL=false
+      - SPRING_DATASOURCE_USERNAME=myuser
+      - SPRING_DATASOURCE_PASSWORD=password
+    depends_on:
+      mysqldb:
+        condition: service_healthy
+    networks:
+      - huerto-net
+
+  # 4. Microservicio CARRITO
+  carrito:
+    build: ./carrito
+    container_name: ms_carrito
+    ports:
+      - "8182:8182"
+    environment:
+      - SERVER_PORT=8182
+      - SPRING_DATASOURCE_URL=jdbc:mysql://mysqldb:3306/mydatabase?allowPublicKeyRetrieval=true&useSSL=false
+      - SPRING_DATASOURCE_USERNAME=myuser
+      - SPRING_DATASOURCE_PASSWORD=password
+    depends_on:
+      mysqldb:
+        condition: service_healthy
+    networks:
+      - huerto-net
+
+networks:
+  huerto-net:
+    driver: bridge
+
+volumes:
+  mysql_data:
