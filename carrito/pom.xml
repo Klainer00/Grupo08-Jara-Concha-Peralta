@@ -43,19 +43,19 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+
+
+		<dependency>
+		<groupId>org.postgresql</groupId>
+		<artifactId>postgresql</artifactId>
+		<scope>runtime</scope>
+		</dependency>
+
+		<dependency>
+		<groupId>com.google.cloud.sql</groupId>
+		<artifactId>postgres-socket-factory</artifactId>
+		<version>1.27.0</version> </dependency>
 	</dependencies>
-
-	<dependency>
-    <groupId>org.postgresql</groupId>
-    <artifactId>postgresql</artifactId>
-    <scope>runtime</scope>
-	</dependency>
-
-	<dependency>
-    <groupId>com.google.cloud.sql</groupId>
-    <artifactId>postgres-socket-factory</artifactId>
-    <version>1.27.0</version> </dependency>
-
 	<build>
 		<plugins>
 			<plugin>
