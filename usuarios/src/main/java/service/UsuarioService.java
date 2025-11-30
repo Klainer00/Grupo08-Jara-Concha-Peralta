@@ -5,6 +5,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import dto.RegisterRequestDto; 
+import dto.LoginRequestDto; // Importar LoginRequestDto
 
 import modelo.Usuario;
 import modelo.RolEntity; 
@@ -35,9 +36,9 @@ public class UsuarioService {
     }
 
     public Usuario crearUsuario(RegisterRequestDto requestDto) {
-    if (usuarioRepository.findByCorreo(requestDto.getCorreo()).isPresent()) {
-         throw new RuntimeException("El correo ya está en uso"); 
-    }
+        if (usuarioRepository.findByCorreo(requestDto.getCorreo()).isPresent()) {
+            throw new RuntimeException("El correo ya está en uso"); 
+        }
 
         Usuario usuario = new Usuario();
         
@@ -48,7 +49,8 @@ public class UsuarioService {
         usuario.setDireccion(requestDto.getDireccion());
         usuario.setTelefono(requestDto.getTelefono());
 
-        String rolNombre = "USER"; 
+        // Cambiar "USER" por "USUARIO"
+        String rolNombre = "USUARIO"; 
         RolEntity rol = rolRepository.findByNombre(rolNombre)
                 .orElseThrow(() -> new RuntimeException("Error: Rol '" + rolNombre + "' no encontrado. " +
                                                         "Asegúrate de que el rol exista en la tabla 'roles'."));
@@ -87,5 +89,16 @@ public class UsuarioService {
             return true;
         }
         return false; 
+    }
+
+    public Usuario loginUsuario(LoginRequestDto requestDto) {
+        Usuario usuario = usuarioRepository.findByCorreo(requestDto.getCorreo())
+                .orElseThrow(() -> new RuntimeException("Correo o contraseña incorrectos"));
+        
+        if (!passwordEncoder.matches(requestDto.getContraseña(), usuario.getContraseña())) {
+            throw new RuntimeException("Correo o contraseña incorrectos");
+        }
+        
+        return usuario;
     }
 }

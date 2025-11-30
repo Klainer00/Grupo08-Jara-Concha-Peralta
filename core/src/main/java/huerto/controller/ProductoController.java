@@ -21,7 +21,7 @@ public class ProductoController {
 
     // CREATE (Solo ADMIN)
     @PostMapping
-    @PreAuthorize("hasAuthority('ROLE_ADMIN')")  // <-- CORREGIDO
+    @PreAuthorize("hasAuthority('ADMIN')")  // <-- CORREGIDO
     public ResponseEntity<ProductoResponseDto> crearProducto(@Valid @RequestBody ProductoRequestDto dto) {
         ProductoResponseDto productoCreado = productoService.crearProducto(dto);
         return ResponseEntity.status(HttpStatus.CREATED).body(productoCreado);
