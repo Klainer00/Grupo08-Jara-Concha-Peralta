@@ -5,9 +5,11 @@ on:
     branches: [ "main", "master" ]
 
 env:
-  PROJECT_ID: ${{ secrets.GCP_PROJECT_ID }}
+  # Estas variables son fijas y se usan en la autenticación
   REGION: us-central1
+  PROJECT_ID: huerto-hogar-479801
   REPO_NAME: mi-repo
+  REGISTRY_HOST: us-central1-docker.pkg.dev/huerto-hogar-479801/mi-repo
 
 jobs:
   build-and-deploy:
@@ -18,7 +20,7 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v3
 
-    # 2. Autenticación con Google Cloud
+    # 2. Autenticación con Google Cloud (Usa el Secreto de la llave)
     - name: Google Auth
       id: auth
       uses: 'google-github-actions/auth@v1'
@@ -30,24 +32,26 @@ jobs:
       run: |
         gcloud auth configure-docker ${{ env.REGION }}-docker.pkg.dev --quiet
 
-    # 4. Construir y Subir Imágenes
+    # 4. Construir y Subir Imágenes (Usando rutas fijas)
     - name: Build and Push Services
       run: |
+        # Usamos la etiqueta :latest en todos los push para que sea consistente
+        
         # --- USUARIOS ---
-        docker build -t ${{ env.REGION }}-docker.pkg.dev/${{ env.PROJECT_ID }}/${{ env.REPO_NAME }}/usuarios:latest ./usuarios
-        docker push ${{ env.REGION }}-docker.pkg.dev/${{ env.PROJECT_ID }}/${{ env.REPO_NAME }}/usuarios:latest
+        docker build -t ${{ env.REGISTRY_HOST }}/usuarios:latest ./usuarios
+        docker push ${{ env.REGISTRY_HOST }}/usuarios:latest
         
         # --- CARRITO ---
-        docker build -t ${{ env.REGION }}-docker.pkg.dev/${{ env.PROJECT_ID }}/${{ env.REPO_NAME }}/carrito:latest ./carrito
-        docker push ${{ env.REGION }}-docker.pkg.dev/${{ env.PROJECT_ID }}/${{ env.REPO_NAME }}/carrito:latest
+        docker build -t ${{ env.REGISTRY_HOST }}/carrito:latest ./carrito
+        docker push ${{ env.REGISTRY_HOST }}/carrito:latest
         
-        # --- CORE BACKEND (v6) ---
-        docker build -t ${{ env.REGION }}-docker.pkg.dev/${{ env.PROJECT_ID }}/${{ env.REPO_NAME }}/core-backend:latest ./core
-        docker push ${{ env.REGION }}-docker.pkg.dev/${{ env.PROJECT_ID }}/${{ env.REPO_NAME }}/core-backend:latest
+        # --- CORE BACKEND ---
+        docker build -t ${{ env.REGISTRY_HOST }}/core-backend:latest ./core
+        docker push ${{ env.REGISTRY_HOST }}/core-backend:latest
         
         # --- API GATEWAY ---
-        docker build -t ${{ env.REGION }}-docker.pkg.dev/${{ env.PROJECT_ID }}/${{ env.REPO_NAME }}/api-gateway:latest ./gateway
-        docker push ${{ env.REGION }}-docker.pkg.dev/${{ env.PROJECT_ID }}/${{ env.REPO_NAME }}/api-gateway:latest
+        docker build -t ${{ env.REGISTRY_HOST }}/api-gateway:latest ./gateway
+        docker push ${{ env.REGISTRY_HOST }}/api-gateway:latest
 
     # 5. Desplegar en Swarm vía SSH
     - name: Deploy to Swarm Manager
@@ -61,7 +65,7 @@ jobs:
           gcloud auth print-access-token | sudo docker login -u oauth2accesstoken --password-stdin https://${{ env.REGION }}-docker.pkg.dev
           
           # Actualizar servicios forzando la nueva imagen
-          sudo docker service update --with-registry-auth --image ${{ env.REGION }}-docker.pkg.dev/${{ env.PROJECT_ID }}/${{ env.REPO_NAME }}/api-gateway:latest --force mi-app_gateway
-          sudo docker service update --with-registry-auth --image ${{ env.REGION }}-docker.pkg.dev/${{ env.PROJECT_ID }}/${{ env.REPO_NAME }}/usuarios:latest --force mi-app_usuarios
-          sudo docker service update --with-registry-auth --image ${{ env.REGION }}-docker.pkg.dev/${{ env.PROJECT_ID }}/${{ env.REPO_NAME }}/carrito:latest --force mi-app_carrito
-          sudo docker service update --with-registry-auth --image ${{ env.REGION }}-docker.pkg.dev/${{ env.PROJECT_ID }}/${{ env.REPO_NAME }}/core-backend:latest --force mi-app_core-backend
+          sudo docker service update --with-registry-auth --image ${{ env.REGISTRY_HOST }}/api-gateway:latest --force mi-app_gateway
+          sudo docker service update --with-registry-auth --image ${{ env.REGISTRY_HOST }}/usuarios:latest --force mi-app_usuarios
+          sudo docker service update --with-registry-auth --image ${{ env.REGISTRY_HOST }}/carrito:latest --force mi-app_carrito
+          sudo docker service update --with-registry-auth --image ${{ env.REGISTRY_HOST }}/core-backend:latest --force mi-app_core-backend
