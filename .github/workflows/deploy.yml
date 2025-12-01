@@ -25,7 +25,12 @@ jobs:
       id: auth
       uses: 'google-github-actions/auth@v1'
       with:
-        credentials_json: '${{ secrets.GCP_SA_KEY }}'
+        # 1. Reemplaza con el ID de tu proyecto de GCP
+        project_id: ${{ env.PROJECT_ID }}
+        # 2. Reemplaza con el nombre de tu Workload Identity Provider
+        workload_identity_provider: 'projects/PROJECT_NUMBER/locations/global/workloadIdentityPools/github-pool/providers/github-provider'
+        # 3. Reemplaza con el email de la Cuenta de Servicio
+        service_account: 'github-deployer@${{ env.PROJECT_ID }}.iam.gserviceaccount.com'
 
     # 3. Configurar Docker para GCR
     - name: Configure Docker
