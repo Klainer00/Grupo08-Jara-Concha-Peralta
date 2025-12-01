@@ -1,0 +1,10 @@
+{
+  "name": "pubsub-consumer-function",
+  "version": "1.0.0",
+  "description": "Consume mensajes de Pub/Sub para nuevos productos",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {}
+}
