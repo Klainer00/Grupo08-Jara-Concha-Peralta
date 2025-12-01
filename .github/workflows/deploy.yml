@@ -15,6 +15,10 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
 
+    permissions:
+      contents: 'read'
+      id-token: 'write'
+
     steps:
     # 1. Bajar el código
     - name: Checkout code
